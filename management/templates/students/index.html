@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    
+    <!-- adding bootstrap to the page -->
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Student Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#"><span class="sr-only">All Student</span></a>
+            <a class="nav-link active"  href="#">Add Student</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <h3 class="m-4">All Students</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-light ms-4 me-4 mb-4">
+                    <div class="card-header">Header</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Light card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <footer class="mt-auto mb-4">
+        <div class="text-center">
+            <span>
+                Copyright &copy; <script>document.write(new Date().getFullYear())</script> Donald's Programing academy
+            </span>
+        </div>
+      </footer>
+
+    <!-- <script src="https://cdn.jsdelvr.net/npm/bootstrap"></script> -->
+</body>
+</html>
