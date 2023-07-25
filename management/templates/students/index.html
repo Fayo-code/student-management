@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     
     <!-- adding bootstrap to the page -->
 
@@ -16,14 +18,14 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Student Management</a>
+        <a class="navbar-brand" href="#"><span class="fa fa-graduation-cap lg">Student Management</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#"><span class="sr-only">All Student</span></a>
-            <a class="nav-link active"  href="#">Add Student</a>
+            <a class="nav-link active" href="#"><i class="fa fa-list"></i>All Student</a>
+            <a class="nav-link active" href="#"><i class="fa fa-plus"></i>Add Student</a>
           </div>
         </div>
       </nav>
@@ -33,10 +35,40 @@
         <div class="row">
             <div class="col-12">
                 <div class="card bg-light ms-4 me-4 mb-4">
-                    <div class="card-header">Header</div>
+                    <div class="card-header"><i class="fa fa-list"></i>Student Records</div>
                     <div class="card-body">
-                      <h5 class="card-title">Light card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <table>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">STUDENT NUMBER</th>
+                            <th scope="col">FIRST NAME</th>
+                            <th scope="col">LAST NAME</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">FIELD OF STUDY</th>
+                            <th scope="col">GPA</th>
+                            <th scope="col">ACTIONS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for student in students %}
+                            <tr>
+                              <th scope="row">{{student.student_number}}</th>
+                              <td>{{student.first_name}}</td>
+                              <td>{{student.last_name}}</td>
+                              <td>{{student.email}}</td>
+                              <td>{{student.field_of_study}}</td>
+                              <td>{{student.gpa}}</td>
+                              <td>
+                                <a href="#" class="btn btn-success"><i class="fa fa-info-circle"></i></a>
+                                <a href="#" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                <a href="#"" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                              </td>
+                            </tr>
+                          {% endfor %}
+                          
+                        </tbody>
+                      </table>
                     </div>
                 </div>
             </div>
